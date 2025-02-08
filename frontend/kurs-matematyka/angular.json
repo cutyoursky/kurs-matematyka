@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "matematyka-front": {
+    "kurs-matematyka": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/matematyka-front",
+            "outputPath": "dist/kurs-matematyka",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "matematyka-front:build:production"
+              "buildTarget": "kurs-matematyka:build:production"
             },
             "development": {
-              "buildTarget": "matematyka-front:build:development"
+              "buildTarget": "kurs-matematyka:build:development"
             }
           },
           "defaultConfiguration": "development"

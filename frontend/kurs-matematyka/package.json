@@ -1,5 +1,5 @@
 {
-  "name": "matematyka-front",
+  "name": "kurs-matematyka",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:matematyka-front": "node dist/matematyka-front/server/server.mjs"
+    "serve:ssr:kurs-matematyka": "node dist/kurs-matematyka/server/server.mjs"
   },
   "private": true,
   "dependencies": {
