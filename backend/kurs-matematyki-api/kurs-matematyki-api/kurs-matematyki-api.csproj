@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>kurs_matematyki_api</RootNamespace>
+    <UserSecretsId>ecc8f2a7-8e7e-4df8-9d06-d0b9e06598f6</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

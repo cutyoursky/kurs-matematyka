@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace kurs_matematyki_api.Controllers.Account
 {
@@ -76,6 +77,24 @@ namespace kurs_matematyki_api.Controllers.Account
             {
                 return Problem(loginResult.Message);
             }
+        }
+
+        [HttpPost("forget-password")]
+        public async Task<ActionResult<ApplicationUser>> PostForgetPassword([FromBody] string email)
+        {
+            if (email.IsNullOrEmpty())
+            {
+                return Problem("Email can't be blank");
+            }
+
+            var result = await _userService.ForgetPasswordAsync(email);
+
+            if (result.IsSuccess)
+            {
+                return Ok(result.Message);
+            }
+
+            return Problem(result.Message);
         }
     }
 }
