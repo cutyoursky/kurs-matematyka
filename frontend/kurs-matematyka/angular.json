@@ -89,9 +89,6 @@
                 "input": "public/assets"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
             "scripts": [
               "node_modules/ionicons/dist/ionicons/ionicons.esm.js"
             ]
