@@ -7,6 +7,7 @@ using kurs_matematyki.Core.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -37,7 +38,14 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
     .AddRoleStore<RoleStore<ApplicationRole,
     AccountsDbContext, Guid>>();
 
-
+builder.Services.AddCors(options => {
+    options.AddPolicy(name: MyAllowSpecificOrigins, policyBuilder =>
+    {
+        policyBuilder.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    }); 
+});
 
 var app = builder.Build();
 
@@ -47,11 +55,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
 
 app.MapControllers();

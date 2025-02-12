@@ -53,7 +53,7 @@ namespace kurs_matematyki.Core.Services
                 string errors = string.Join(" | ", result.Errors.Select(e => e.Description));
                 return new UserManagerResponse
                 {
-
+                    Message = errors,
                 };
             }
 
