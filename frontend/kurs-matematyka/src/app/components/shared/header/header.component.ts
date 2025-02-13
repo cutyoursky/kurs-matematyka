@@ -8,7 +8,7 @@ import { ionCart, ionLogoFacebook } from '@ng-icons/ionicons';
   imports: [NgIcon, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  providers: [provideIcons({ionLogoFacebook, ionCart})]
+  providers: [provideIcons({ ionLogoFacebook, ionCart })],
 })
 export class HeaderComponent {
   isAuth = input<boolean>(false);
